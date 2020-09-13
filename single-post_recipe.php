@@ -42,10 +42,11 @@
 </table>
 
 <p><?php echo do_shortcode('[wpuf-meta name="recipe_name"]'); ?></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
+<p><?php echo do_shortcode('[wpuf-meta name="material"]'); ?></p>
+<p><?php echo do_shortcode('[wpuf-meta name="how_to_make"]'); ?></p>
+<p><?php echo do_shortcode('[wpuf-meta name="notice_and_teck"]'); ?></p>
+<p><?php echo do_shortcode('[wpuf-meta name="trigger"]'); ?></p>
+
 
 
 <?php echo get_footer(); ?>
