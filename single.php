@@ -1,12 +1,6 @@
 <!-- /* spell *wp_loop+* and press enter */ -->
 <?php echo get_header(); ?>
 
-<?php if(have_posts()): ?>
-  <?php while(have_posts()): the_post();?>
-    <?php get_template_part('template-parts/loop','post_recipe') ?>
-  <?php endwhile; ?>
-<?php endif; ?>
-
 <style>
   th
   {

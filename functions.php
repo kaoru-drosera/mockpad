@@ -11,7 +11,7 @@
         'revisions', // リビジョン
         'comments', // コメント
       ];
-      register_post_type('post_recipe', //カスタム投稿名
+      register_post_type('article', //カスタム投稿名
         array(
           'label' => 'レシピ投稿', // admin画面左メニューで表示されるテキスト
           'public' => true, // 投稿タイプをパブリックにするか否か
@@ -23,7 +23,7 @@
       // タクソノミー(カテゴリ)追加
       register_taxonomy(
         'post_taxonomy', // 追加するタクソノミー名（英小文字とアンダースコアのみ）
-        'post_recipe',  // どのカスタム投稿タイプに追加するか
+        'article',  // どのカスタム投稿タイプに追加するか
         array(
           'update_count_callback' => '_update_post_term_count', // 各タクソノミーの管理画面でターム一覧に表示される投稿数を正しい値にするのに必要
           'label' => 'レシピ投稿テストタクソノミー', // 管理画面に表示される名前(投稿でいうカテゴリー)
@@ -38,7 +38,7 @@
       // タクソノミー(タグ)追加
       register_taxonomy(
         'post_tag', // 追加するタクソノミー名（英小文字とアンダースコアのみ）
-        'post_recipe',  // どのカスタム投稿タイプに追加するか
+        'article',  // どのカスタム投稿タイプに追加するか
         array(
           'update_count_callback' => '_update_post_term_count', // 各タクソノミーの管理画面でターム一覧に表示される投稿数を正しい値にするのに必要
           'label' => 'レシピ投稿タクソノミー', // 管理画面に表示される名前(投稿でいうカテゴリー)
