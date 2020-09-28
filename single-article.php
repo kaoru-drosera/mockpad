@@ -16,8 +16,6 @@ th
   $the_query_ct = new WP_Query($args_ct);
  ?>
 
-<?php if($the_query_ct->have_posts()): ?>
-  <?php while($the_query_ct->have_posts()): $the_query_ct->the_post();?>
 
     <table>
       <thead>
@@ -43,11 +41,17 @@ th
           <th>作ろうと思ったきっかけ:</th>
           <td><?php echo do_shortcode('[wpuf-meta name="trigger"]'); ?></td>
         </tr>
+        <tr>
+          <th>お気に入りに登録する:</th>
+          <td><?php echo get_favorites_button(get_the_ID()); ?></td>
+        </tr>
+        <tr>
+          <th>イイね！ボタン:</th>
+          <td><?php echo do_shortcode("[wp_ulike]"); ?><?php  // if(function_exists('the_ratings')) { the_ratings(); } ?></td>
+        </tr>
       </tbody>
     </table>
 
-  <?php endwhile; ?>
-<?php endif; ?>
 
 
 
