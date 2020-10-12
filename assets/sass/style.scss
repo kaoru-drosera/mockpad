@@ -2,3 +2,131 @@
  background-color: rgb(136, 194, 70);
  height: 100px;
 }
+
+/* 基本的な編集 */
+.container
+{
+  width: 1260px;
+  padding: 0 30px;
+  margin: auto;
+  background-color: #fff;
+}
+
+/* 基本的な編集 ここまで */
+
+
+
+
+/* front-page */
+.main-column
+{
+  .container
+  {
+    padding: 0;
+  }
+}
+.recipe-card-link
+{
+  padding: 30px;
+  border-bottom: 1px solid #999;
+  display: block;
+}
+.recipe_list
+{
+  margin-top: 60px;
+}
+.recipe_ttl
+{
+  color: #7e0;
+  font-size: 24px;
+}
+.recipe_name
+{
+  margin-bottom: 12px;
+}
+.front-material
+{
+  color: #ddd;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.front-howtomake
+{
+  color: #fa0;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+/* front-page is over */
+
+
+/* single-article */
+.main-contents
+{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.main-column
+{
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+.recipe-ttl-wrap,
+.material-wrap,
+.htm-wrap,
+.notice-wrap,
+.fav_and_good
+{
+  display: flex;
+  margin-top: 20px;
+}
+.fav_and_good
+{
+  display: flex;
+  align-items: center;
+}
+.tbn-imgwrap
+{
+  width: 250px;
+}
+.htm-wrap,
+.notice-wrap
+{
+  justify-content: space-between;
+}
+.single.recipe_ttl
+{
+  font-size: 28px;
+}
+.single.main-column
+{
+  width: 500px;
+}
+.material
+{
+  margin-left: 20px;
+}
+.material_h4,
+.htm_h4,
+.nat_h4,
+.trigger_h4
+{
+  color: #ccc;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.material_content p,
+.htm-contents p,
+.nat_content p,
+.trigger_content p
+{
+  font-size: 14px;
+  line-height: 1.7;
+}
+.good-wrapper
+{
+  margin-left: 20px;
+}
+
+
+/* single-article is over */
