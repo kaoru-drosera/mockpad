@@ -5,4 +5,41 @@
   {
     border: 3px solid #000;
   }
+  /* 基本的な編集 */
+
+  .container
+  {
+    width: 100%;
+  }
+  .flexer
+  {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 60px 30px;
+  }
+
+  /* 基本的な編集 ここまで */
+
+  /* front-page */
+
+  .recipe_list
+  {
+    width: 100%;
+    background-color: #ff0;
+  }
+
+  .side-column
+  {
+    width: 100%;
+    margin-top: 50px;
+    background-color: #ff0;
+  }
+
+  /* front-page is over */
+
+
+
 }

@@ -10,25 +10,36 @@
  ?>
  <div class="main-column">
    <div class="container">
-     <ul class="recipe_list">
-     <?php if($the_query_ct->have_posts()): ?>
-       <?php while($the_query_ct->have_posts()): $the_query_ct->the_post();?>
-           <?php get_template_part('template-parts/loop','article') ?>
-           <!-- <p><?php // echo do_shortcode('[wpuf-meta name="recipe_name"]'); ?></p>
-           <p><?php // echo do_shortcode('[wpuf-meta name="material"]'); ?></p>
-           <p><?php // echo do_shortcode('[wpuf-meta name="how_to_make"]'); ?></p>
-           <p><?php // echo do_shortcode('[wpuf-meta name="notice_and_teck"]'); ?></p>
-           <p><?php // echo do_shortcode('[wpuf-meta name="trigger"]'); ?></p>
-           <p></p> -->
-       <?php endwhile; ?>
-     <?php endif; ?>
-   </ul>
+     <div class="flexer">
+       <ul class="recipe_list">
+         <?php if($the_query_ct->have_posts()): ?>
+           <?php while($the_query_ct->have_posts()): $the_query_ct->the_post();?>
+             <?php get_template_part('template-parts/loop','article') ?>
+             <!-- <p><?php // echo do_shortcode('[wpuf-meta name="recipe_name"]'); ?></p>
+             <p><?php // echo do_shortcode('[wpuf-meta name="material"]'); ?></p>
+             <p><?php // echo do_shortcode('[wpuf-meta name="how_to_make"]'); ?></p>
+             <p><?php // echo do_shortcode('[wpuf-meta name="notice_and_teck"]'); ?></p>
+             <p><?php // echo do_shortcode('[wpuf-meta name="trigger"]'); ?></p>
+             <p></p> -->
+           <?php endwhile; ?>
+         <?php endif; ?>
+       </ul>
+       <?php if(is_user_logged_in()): ?>
+         <div class="side-column">
+           <h4 class="">お気に入りした投稿</h4>
+           <?php get_sidebar('favorite'); ?>
+           <h4 class="">いいね！した投稿</h4>
+           <?php get_sidebar('ulike'); ?>
+         </div><!--  .side-column -->
+       <?php endif; ?>
+     </div><!--  .contents -->
    </div><!--  .container -->
  </div><!--  .main-column -->
 
 <?php if(is_user_logged_in()): ?>
 ログイン中
 <?php endif; ?>
+
 
 <div class="div"></div><!--  .div -->
 

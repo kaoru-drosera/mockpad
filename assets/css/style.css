@@ -12,7 +12,35 @@
 	width: 1260px;
 }
 
+.flexer {
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-between;
+	padding: 60px 30px;
+}
+
 /* 基本的な編集 ここまで */
+
+/* ヘッダー */
+
+.gnav-wrapper {
+	align-items: center;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+.global-navigation_user {
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+.global-navigation_user .menu-item {
+	margin-left: 20px;
+}
+
+/* ヘッダー ここまで */
 
 /* front-page */
 
@@ -20,19 +48,39 @@
 	padding: 0;
 }
 
-.recipe-card-link {
+.recipe-card {
 	border-bottom: 1px solid #999;
 	display: block;
 	padding: 30px;
 }
 
-.recipe_list {
-	margin-top: 60px;
+.recipe-card-link {
+	display: block;
+	outline: 1px solid transparent;
+	outline-offset: -20px;
+	transition: .3s;
 }
 
-.recipe_ttl {
+.recipe-card-link:hover {
+	outline: 1px solid #aaa;
+	outline-offset: 0px;
+}
+
+.recipe-card-link:hover .recipe_name {
+	background-color: #7e0;
+	color: #fff;
+}
+
+.recipe_list {
+	background-color: #ff0;
+	width: 65%;
+}
+
+.recipe_ttl .recipe_name {
 	color: #7e0;
+	display: inline-block;
 	font-size: 24px;
+	transition: .3s;
 }
 
 .recipe_name {
@@ -49,6 +97,11 @@
 	color: #fa0;
 	font-size: 12px;
 	margin-bottom: 12px;
+}
+
+.side-column {
+	background-color: #ff0;
+	width: 30%;
 }
 
 /* front-page is over */

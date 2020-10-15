@@ -20,13 +20,5 @@
        <span class="recipe_ttl">
          <h3 class="recipe_name"><?php echo do_shortcode('[wpuf-meta name="recipe_name"]'); ?></h3><!--  .recipe_name -->
        </span>
-       <span class="material_wrap">
-         <p class="front-material"><?php echo do_shortcode('[wpuf-meta name="material"]'); ?></p>
-         <p class="front-howtomake"><?php echo do_shortcode('[wpuf-meta name="how_to_make"]'); ?></p>
-       </span>
-       <!-- <p><?php // echo do_shortcode('[wpuf-meta name="notice_and_teck"]'); ?></p>
-       <p><?php // echo do_shortcode('[wpuf-meta name="trigger"]'); ?></p> -->
      </a>
-       <p><?php echo do_shortcode("[wp_ulike]"); ?><?php // if(function_exists('the_ratings')) { the_ratings(); } ?></p>
-
    </li><!--  .portfolio-card -->

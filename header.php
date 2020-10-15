@@ -19,3 +19,39 @@
    ?>
 </head>
 <body <?php body_class(); ?>>
+  <section class="gnav">
+    <div class="container">
+      <div class="gnav-wrapper">
+        <div class="usergnav">
+          <?php if(is_user_logged_in()): ?>
+            <?php $args = array(
+              'menu' => 'mockpad-global-navigation_user',
+              'menu_class' => 'global-navigation_user',
+              'container' => false,
+            );
+            wp_nav_menu($args);
+            ?>
+          <?php endif; ?>
+        </div><!--  .usergnav -->
+        <div class="login">
+          <?php if(is_user_logged_in()): ?>
+            <?php $args = array(
+              'menu' => 'mockpad-global-navigation_logout',
+              'menu_class' => 'global-navigation_user',
+              'container' => false,
+            );
+            wp_nav_menu($args);
+            ?>
+          <?php else: ?>
+            <?php $args = array(
+              'menu' => 'mockpad-global-navigation_no_login',
+              'menu_class' => 'global-navigation_user',
+              'container' => false,
+            );
+            wp_nav_menu($args);
+            ?>
+          <?php endif; ?>
+        </div><!--  .login -->
+      </div><!--  .gnav-wrapper -->
+    </div><!--  .container -->
+  </section><!--  .gnav -->

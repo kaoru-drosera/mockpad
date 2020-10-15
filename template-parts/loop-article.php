@@ -24,9 +24,9 @@
          <p class="front-material"><?php echo do_shortcode('[wpuf-meta name="material"]'); ?></p>
          <p class="front-howtomake"><?php echo do_shortcode('[wpuf-meta name="how_to_make"]'); ?></p>
        </span>
+     </a>
        <!-- <p><?php // echo do_shortcode('[wpuf-meta name="notice_and_teck"]'); ?></p>
        <p><?php // echo do_shortcode('[wpuf-meta name="trigger"]'); ?></p> -->
        <p><?php echo do_shortcode("[wp_ulike]"); ?><?php // if(function_exists('the_ratings')) { the_ratings(); } ?></p>
-     </a>
 
    </li><!--  .portfolio-card -->
