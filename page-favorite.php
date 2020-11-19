@@ -3,7 +3,7 @@
 <div class="container">
   <div class="favorite">
     <div class="flexer">
-      <ul class="recipe_list">
+      <ul class="panel panel-on recipe_list">
         <?php // ---open here--- echo do_shortcode('[user_favorites include_thumbnails ="true" include_buttons ="true" include_excerpts ="true"]'); ?>
         <?php
          ?>
@@ -14,13 +14,16 @@
         $favorites = get_user_favorites();
         krsort($favorites);
         if ($favorites) :
-        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // If you want to include pagination
+        $paged    = get_query_var( 'page',1 );
         $favorites_query = new WP_Query(array(
           'post_type' => 'article', // If you have multiple post types, pass an array
           'posts_per_page' => -1,
           'ignore_sticky_posts' => true,
           'post__in' => $favorites,
-          'orderby' => 'post__in'
+          'orderby' => 'post__in',
+
+          'paged' => $paged
+
         ));
         ?>
           <?php if ($favorites_query->have_posts()): ?>
@@ -36,6 +39,19 @@
           <?php endif; ?>
         <?php endif; ?>
       </ul>
+      <?php
+      $GLOBALS['wp_query']->max_num_pages = $favorites_query->max_num_pages;
+      the_posts_pagination(array(
+        'screen_reader_text' => ' ',
+        'prev_next' => true,
+        'format'             => '?page=%#%',
+        'current' => $paged,
+        'prev_text' => __( '←前へ', 'textdomain' ),
+        'next_text' => __( '次へ→', 'textdomain' )
+      ));
+      wp_reset_postdata();
+      ?>
+
 
       <?php if(is_user_logged_in()): ?>
         <div class="side-column">

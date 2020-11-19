@@ -10,7 +10,8 @@
   $args_ct = array(
   'post_type' => 'article',
   'post_status' => 'publish',
-  'posts_per_page' => 6
+  'posts_per_page' => 6,
+  'custom_orderby' => true
   );
   $the_query_ct = new WP_Query($args_ct);
 
@@ -21,8 +22,34 @@
          <h3 class="recipe_name"><?php echo do_shortcode('[wpuf-meta name="recipe_name"]'); ?></h3><!--  .recipe_name -->
        </span>
        <span class="material_wrap">
-         <p class="front-material"><?php echo do_shortcode('[wpuf-meta name="material"]'); ?></p>
-         <p class="front-howtomake"><?php echo do_shortcode('[wpuf-meta name="how_to_make"]'); ?></p>
+         <p class="front-material">
+           <?php
+           $material_param = do_shortcode('[wpuf-meta name="material"]');
+           if(mb_strlen($material_param, 'UTF-8')>40){
+            	$content= mb_substr(strip_tags($material_param), 0, 40, 'UTF-8');
+            	echo $content.'…';
+            }else{
+            	echo $material_param;
+            };
+            // 字数制限
+            // https://www.m-hand.co.jp/program/5130/
+            ?>
+         </p>
+         <p class="front-howtomake">
+           <?php // echo do_shortcode('[wpuf-meta name="how_to_make"]'); ?>
+           <?php
+           $how_to_make_param = do_shortcode('[wpuf-meta name="how_to_make"]');
+           if(mb_strlen($how_to_make_param, 'UTF-8')>40){
+            	$content= mb_substr(strip_tags($how_to_make_param), 0, 40, 'UTF-8');
+            	echo $content.'…';
+            }else{
+            	echo $how_to_make_param;
+            };
+            // 字数制限
+            // https://www.m-hand.co.jp/program/5130/
+            ?>
+         </p>
+         <p class="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></p>
        </span>
      </a>
        <!-- <p><?php // echo do_shortcode('[wpuf-meta name="notice_and_teck"]'); ?></p>

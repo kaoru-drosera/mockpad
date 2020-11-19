@@ -4,12 +4,38 @@
 }
 
 /* 基本的な編集 */
+*
+{
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Meiryo",
+    sans-serif;
+}
 .container
 {
   width: 1260px;
   padding: 0 30px;
   margin: auto;
   background-color: #fff;
+}
+.changer
+{
+  margin-top: 50px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+.tolist,
+.torank
+{
+  display: inline-block;
+  margin-left: 30px;
+}
+.panel.panel-on
+{
+  display: block;
 }
 .flexer
 {
@@ -19,6 +45,7 @@
   justify-content: space-between;
   padding: 60px 30px;
 }
+
 
 /* 基本的な編集 ここまで */
 
@@ -65,13 +92,21 @@
 .recipe-card-link
 {
   display: block;
+  -webkit-outline: 1px solid transparent;
+  -ms-outline: 1px solid transparent;
   outline: 1px solid transparent;
+  -webkit-outline-offset: -20px;
+  -ms-outline-offset: -20px;
   outline-offset: -20px;
   transition: .3s;
   &:hover
   {
+    -webkit-outline: 1px solid #aaa;
+    -ms-outline: 1px solid #aaa;
     outline: 1px solid #aaa;
-    outline-offset: 0px;
+    -webkit-outline-offset: -1px;
+    -ms-outline-offset: -1px;
+    outline-offset: -1px;
   }
   &:hover .recipe_name
   {
@@ -79,10 +114,12 @@
     background-color: #7e0;
   }
 }
-.recipe_list
+.recipe_list,
+.recipe_ranking
 {
   width: 65%;
   background-color: #ff0;
+  display: none;
 }
 .recipe_ttl
 {
@@ -92,6 +129,13 @@
     font-size: 24px;
     transition: .3s;
     display: inline-block;
+    font-family: "Helvetica Neue",
+      Arial,
+      "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans",
+      "Meiryo",
+      sans-serif;
+
   }
 }
 .recipe_name
@@ -103,12 +147,25 @@
   color: #ddd;
   font-size: 12px;
   margin-bottom: 12px;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Meiryo",
+    sans-serif;
+
 }
 .front-howtomake
 {
   color: #fa0;
   font-size: 12px;
   margin-bottom: 12px;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Meiryo",
+    sans-serif;
 }
 
 .side-column
@@ -153,6 +210,11 @@
 .notice-wrap
 {
   justify-content: space-between;
+}
+.notice_and_teck,
+.trigger
+{
+  width: 45%;
 }
 .single.recipe_ttl
 {

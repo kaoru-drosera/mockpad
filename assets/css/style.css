@@ -5,11 +5,31 @@
 
 /* 基本的な編集 */
 
+* {
+	font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+}
+
 .container {
 	background-color: #fff;
 	margin: auto;
 	padding: 0 30px;
 	width: 1260px;
+}
+
+.changer {
+	display: -ms-flex;
+	display: flex;
+	margin-top: 50px;
+}
+
+.tolist,
+.torank {
+	display: inline-block;
+	margin-left: 30px;
+}
+
+.panel.panel-on {
+	display: block;
 }
 
 .flexer {
@@ -55,6 +75,10 @@
 }
 
 .recipe-card-link {
+	-webkit-outline: 1px solid transparent;
+	-ms-outline: 1px solid transparent;
+	-webkit-outline-offset: -20px;
+	-ms-outline-offset: -20px;
 	display: block;
 	outline: 1px solid transparent;
 	outline-offset: -20px;
@@ -62,8 +86,12 @@
 }
 
 .recipe-card-link:hover {
+	-webkit-outline: 1px solid #aaa;
+	-ms-outline: 1px solid #aaa;
+	-webkit-outline-offset: -1px;
+	-ms-outline-offset: -1px;
 	outline: 1px solid #aaa;
-	outline-offset: 0px;
+	outline-offset: -1px;
 }
 
 .recipe-card-link:hover .recipe_name {
@@ -71,14 +99,20 @@
 	color: #fff;
 }
 
-.recipe_list {
+.recipe_list_wrapper
+{
+	width: 65%;	
+}
+.recipe_list,
+.recipe_ranking {
 	background-color: #ff0;
-	width: 65%;
+	display: none;
 }
 
 .recipe_ttl .recipe_name {
 	color: #7e0;
 	display: inline-block;
+	font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
 	font-size: 24px;
 	transition: .3s;
 }
@@ -89,12 +123,14 @@
 
 .front-material {
 	color: #ddd;
+	font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
 	font-size: 12px;
 	margin-bottom: 12px;
 }
 
 .front-howtomake {
 	color: #fa0;
+	font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
 	font-size: 12px;
 	margin-bottom: 12px;
 }
@@ -141,6 +177,11 @@
 	justify-content: space-between;
 }
 
+.notice_and_teck,
+.trigger {
+	width: 45%;
+}
+
 .single.recipe_ttl {
 	font-size: 28px;
 }
@@ -175,4 +216,3 @@
 }
 
 /* single-article is over */
-

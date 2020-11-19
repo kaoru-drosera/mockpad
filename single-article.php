@@ -32,14 +32,30 @@ th
             </div><!--  .tbn-imgwrap -->
             <div class="material">
               <h4 class="material_h4">材料</h4><!--  .material_h4 -->
-              <div class="material_content"><p><?php echo do_shortcode('[wpuf-meta name="how_to_make"]'); ?></p></div><!--  .material_content -->
+              <div class="material_content">
+                <p>
+                <?php
+                   $material_params = explode("\n",do_shortcode('[wpuf-meta name="material"]'));
+                   foreach($material_params as $material_param){
+                      echo '<p>'. $material_param ."</p>\n";
+                   }
+                 ?>
+                </p>
+              </div><!--  .material_content -->
             </div><!--  .material -->
           </div><!--  .material-wrap -->
           <div class="htm-wrap">
             <div class="howtomake">
               <h4 class="htm_h4">作り方</h4><!--  .htm_ttl -->
               <div class="htm-contents">
-                <p><?php echo do_shortcode('[wpuf-meta name="how_to_make"]'); ?></p>
+                <p>
+                  <?php
+                     $how_to_make_params = explode("\n",do_shortcode('[wpuf-meta name="how_to_make"]'));
+                     foreach($how_to_make_params as $how_to_make_param){
+                        echo '<p>'. $how_to_make_param ."</p>\n";
+                     }
+                   ?>
+                </p>
               </div><!--  .htm-contents -->
             </div><!--  .howtomake -->
           </div><!--  .htm-wrap -->
@@ -47,13 +63,29 @@ th
             <div class="notice_and_teck">
               <h4 class="nat_h4">注意点・コツ</h4><!--  ._h4 -->
               <div class="nat_content">
-                <p><?php echo do_shortcode('[wpuf-meta name="notice_and_teck"]'); ?></p>
+                <p>
+                  <?php
+                     $notice_and_teck_params = explode("\n",do_shortcode('[wpuf-meta name="notice_and_teck"]'));
+                     foreach($notice_and_teck_params as $notice_and_teck_param){
+                        echo '<p>'. $notice_and_teck_param ."</p>\n";
+                     }
+                   ?>
+
+                </p>
               </div><!--  .nat_content -->
             </div><!--  .notice_and_teck -->
             <div class="trigger">
               <h4 class="trigger_h4">作ろうと思ったきっかけ</h4><!--  ._h4 -->
               <div class="trigger_content">
-                <p><?php echo do_shortcode('[wpuf-meta name="trigger"]'); ?></p>
+                <p>
+                  <?php
+                     $trigger_params = explode("\n",do_shortcode('[wpuf-meta name="trigger"]'));
+                     foreach($trigger_params as $trigger_param){
+                        echo '<p>'. $trigger_param ."</p>\n";
+                     }
+                   ?>
+
+                </p>
               </div><!--  .trigger_content -->
             </div><!--  .trigger -->
           </div><!--  .notice-wrap -->
